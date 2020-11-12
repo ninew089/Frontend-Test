@@ -8,7 +8,7 @@ export default function DisableElevation() {
   React.useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get(
-        "https://8a2fc1a9-0d10-4a86-8098-56ddb92a968a.mock.pstmn.io/hostel",
+        "/hostel",
       );
       setData(result.data);
     };

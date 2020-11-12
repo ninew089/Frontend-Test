@@ -10,7 +10,7 @@ function loadLogin(loginInfo) {
   return async (dispatch) => {
     dispatch({ type: LOAD_LOGIN_REQUEST })
     try {
-      const { data } = await axios.post(`https://8a2fc1a9-0d10-4a86-8098-56ddb92a968a.mock.pstmn.io/book/${loginInfo.email}&&${loginInfo.password}`)
+      const { data } = await axios.post(`/book/${loginInfo.email}&&${loginInfo.password}`)
       dispatch({
         type: LOAD_LOGIN_SUCCESS,
         payload: {

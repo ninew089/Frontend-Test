@@ -8,11 +8,12 @@ import {
   Typography,Button
 
 } from '@material-ui/core'
-
+import { useDispatch,useSelector } from 'react-redux'
+import * as actions from '../action'
 import currencyFormat from 'utils/currencyFormat'
-import {useDispatch} from 'react-redux'
+
 import axios from 'axios'
-import * as actions from 'modules/hostel/action'
+import * as actionsHostel from 'modules/hostel/action'
 
 const useStyles = makeStyles(() => ({
   product: {
@@ -39,10 +40,10 @@ export default function CartProduct({id}) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    
+
     const fetchData = async () => {
       const result = await axios.get(
-        `https://8a2fc1a9-0d10-4a86-8098-56ddb92a968a.mock.pstmn.io/hostel?id=${id}`,
+        `/hostel?id=${id}`,
       );
      
       setData(result.data);
@@ -50,9 +51,11 @@ export default function CartProduct({id}) {
  
     fetchData();
   }, [id]);
-  
+
+
+  const book = useSelector(state => state.book.items);
   const onDelete = () => {
-    const action = actions.removeFromCart(id)
+    const action = actionsHostel.removeFromCart(id)
     dispatch(action)
   }
   return (
