@@ -1,7 +1,7 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import BookDetail from './BookDetail'
 import { Container, Box } from '@material-ui/core'
-import { useDispatch, useSelector } from 'react-redux'
+import {  useSelector } from 'react-redux'
 
 export default function BookList() {
   const productIds = useSelector((state) => state.hostel.productIds)

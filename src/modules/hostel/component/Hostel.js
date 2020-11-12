@@ -1,7 +1,6 @@
 import React from 'react';
 import {Box,Container,Grid} from '@material-ui/core';
 import HostelCard from './HostelCard'
-import hs1 from 'assets/image/hostel.jpg'
 import axios from 'axios'
 export default function DisableElevation() {
 
@@ -30,7 +29,7 @@ export default function DisableElevation() {
     <Container fixed>
     
       <Box fontSize={24} fontWeight={700} paddingTop={8} paddingBottom={ 4}>
-        List
+      Recommended for you
       </Box>
       <Grid container justify='center' alignItems='center' spacing={2}>
       {listItems}

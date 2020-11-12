@@ -1,19 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import { Link as RouterLink, useHistory, NavLink } from 'react-router-dom'
+import {  useHistory } from 'react-router-dom'
 import currencyFormat from 'utils/currencyFormat'
 import {
   Typography,
   Grid,
-  Avatar,
   Box,
   Divider,
-  Button,
 } from '@material-ui/core'
 const useStyles = makeStyles(() => ({
   card: {
@@ -150,10 +143,11 @@ export default function ImgMediaCard(props) {
 
    
     <Divider />
-    <Grid container direction="row" justify="flex-end" alignItems="center">
-    
-        {      currencyFormat(price)}
-
+        <Grid container direction="row" justify="flex-end" alignItems="center">
+          
+        <Box fontWeight={500} marginRight={2}>
+        { currencyFormat(price)}
+</Box>
     </Grid>
 
 </Grid>

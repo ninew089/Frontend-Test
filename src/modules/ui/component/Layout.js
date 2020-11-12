@@ -207,7 +207,7 @@ export default function PersistentDrawerLeft() {
             Wellcome Hostel
           </Box>
           <Box fontSize={14} fontWeight={700} width={ '60%'} > 
-            Choose From a Wide Range of Properties Which Booking.com Offers. 
+            Choose From a Wide Range of Properties Which hostel.com Offers. 
           </Box>
           </div>
         </div>

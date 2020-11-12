@@ -5,15 +5,16 @@ import {
   CardContent,
   CardMedia,
   Grid,
-  Typography,
+  Typography,Button
 
 } from '@material-ui/core'
-import img from 'assets/image/hostel.jpg'
+
 import currencyFormat from 'utils/currencyFormat'
-
+import {useDispatch} from 'react-redux'
 import axios from 'axios'
+import * as actions from 'modules/hostel/action'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   product: {
     display: 'flex',
     margin:10,
@@ -23,7 +24,11 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     width: 150,
-  },
+  }, cancel: {
+    color: "red",
+    fontWeight: 500,
+    fontSize:12
+  }
 }))
 
 export default function CartProduct({id}) {
@@ -31,6 +36,7 @@ export default function CartProduct({id}) {
 
   const [data, setData] = React.useState([]);
 
+  const dispatch = useDispatch();
 
   useEffect(() => {
     
@@ -43,9 +49,12 @@ export default function CartProduct({id}) {
     };
  
     fetchData();
-  }, []);
+  }, [id]);
   
-
+  const onDelete = () => {
+    const action = actions.removeFromCart(id)
+    dispatch(action)
+  }
   return (
     <Card className={classes.product}>
 
@@ -60,7 +69,10 @@ export default function CartProduct({id}) {
             <div>{currencyFormat(data.price)}</div>
           </Grid>
           <Grid item>
-
+          <Button onClick={onDelete} className={classes.cancel} >
+          Cancel reservation
+          </Button>
+      
           </Grid>
         </Grid>
       </CardContent>

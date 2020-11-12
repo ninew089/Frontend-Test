@@ -2,11 +2,11 @@ import React,{useEffect} from 'react';
 import { Box, Container,Grid,Button } from '@material-ui/core';
 import { useLocation } from 'react-router-dom'
 import axios from 'axios'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import currencyFormat from 'utils/currencyFormat'
 import * as actions from '../action'
 import { useHistory } from 'react-router-dom'
-import GoogleMapReact from 'google-map-react';
+
 import Map from './Mapping'
 export default function Card() {
   const  {search}  = useLocation()
@@ -36,7 +36,7 @@ export default function Card() {
     };
  
     fetchData();
-  }, []);
+  }, [search]);
   
 
 
@@ -46,7 +46,7 @@ export default function Card() {
     history.push('/book')
   }
  
-  const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
   return (
     <>
       

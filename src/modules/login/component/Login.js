@@ -16,7 +16,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import * as actions from '../action'
 
 import * as yup from 'yup'
-import { RedoRounded } from '@material-ui/icons'
+
 
 const useStyles = makeStyles((theme) => ({
   input: {
@@ -159,7 +159,7 @@ export default function SignIn() {
     if (login) {
       history.push('/')
     }
-  }, [login]);
+  }, [login,history]);
  
 
   const onLogin =  (loginInfo) => { 
@@ -176,7 +176,11 @@ export default function SignIn() {
         <CssBaseline />
         <div className={classes.paper}>    
           <Typography component="h1" variant="h5" className={classes.font}>
-                      Hostel Login
+            Hostel Login
+          </Typography>
+          <Typography variant="h7" >
+                      email: admin@gmail.com |
+                      password:1234
           </Typography>
                   {console.log(errors)}
           <form className={classes.form} noValidate>

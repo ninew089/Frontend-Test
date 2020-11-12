@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from './action'
+import { ADD_TO_CART, REMOVE_FROM_CART,CLEAR_HOSTEL } from './action'
 
 
 const initialState = {
@@ -22,7 +22,9 @@ export default function (state = initialState, action) {
           (id) => +id !== action.payload.productId
         ),
       }
-
+  
+      case CLEAR_HOSTEL:
+        return { ...state, productIds: [] }
     default:
       return state
   }
