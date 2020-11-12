@@ -1,13 +1,18 @@
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
+import {Drawer,Badge} from '@material-ui/core';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {
   AppBar,
   Toolbar,
-
-  IconButton,Divider,Box,List,ListItem,ListItemText,ListItemIcon
+  IconButton,
+  Divider,
+  Box,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon
 } from '@material-ui/core'
 import {  NavLink } from 'react-router-dom'
 
@@ -86,6 +91,8 @@ export default function PersistentDrawerLeft() {
   const [open, setOpen] = React.useState(false);
   const dispatch = useDispatch()
   const login = useSelector((state) => state.login.Login)
+  const productIds = useSelector((state) => state.hostel.productIds)
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -96,10 +103,11 @@ export default function PersistentDrawerLeft() {
   const logOut = () => {
     const actions = action.setLogin(false)
     dispatch(actions)
-}
+  }
+  
   return (
     <div className={classes.root}>
-     
+
       <CssBaseline />
       <AppBar
         elevation={0}
@@ -131,9 +139,9 @@ export default function PersistentDrawerLeft() {
             style={{ color: 'inherit', textDecoration: 'inherit' }}
           >
           <IconButton color="inherit" >
- 
+          <Badge badgeContent={productIds.length} color="secondary">
             <Book/>
-    
+    </Badge>
             </IconButton>
             </NavLink>
         </Toolbar>
