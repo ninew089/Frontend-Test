@@ -139,7 +139,7 @@ export default function ImgMediaCard(props) {
         className={classes.detail}
       >
         <div className={classes.dot} />
-        <Box fontWeight={500}>สังคมศาสตร์</Box>
+        <Box fontWeight={500}>Detail</Box>
 
         <div>
           <Box fontWeight={400} className={classes.caption}>

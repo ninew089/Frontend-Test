@@ -169,14 +169,7 @@ export default function SignIn() {
               inputRef={register}
               variant="outlined"
               className={classes.textfield}
-              InputProps={{
-                className: classes.input,
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <AiOutlineUser size={24} />
-                  </InputAdornment>
-                ),
-              }}
+       
               fullWidth
               helperText={errors.email ? errors.email.message : ''}
               error={!!errors.email}
@@ -187,14 +180,7 @@ export default function SignIn() {
               inputRef={register}
               variant="outlined"
               className={classes.textfield}
-              InputProps={{
-                className: classes.input,
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <AiOutlineUser size={24} />
-                  </InputAdornment>
-                ),
-              }}
+        
               fullWidth
               helperText={errors.email ? errors.email.message : ''}
               error={!!errors.email}
@@ -203,16 +189,9 @@ export default function SignIn() {
               label="birthday"
               name="birthday"
               inputRef={register}
-              variant="outlined"
+              variant="standard"
               className={classes.textfield}
-              InputProps={{
-                className: classes.input,
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <AiOutlineUser size={24} />
-                  </InputAdornment>
-                ),
-              }}
+          type="date"
               fullWidth
               helperText={errors.email ? errors.email.message : ''}
               error={!!errors.email}
