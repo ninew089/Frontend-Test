@@ -8,7 +8,7 @@ export default function DisableElevation() {
   React.useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get(
-        "/hostel",
+        "/hostels",
       );
       setData(result.data);
     };
@@ -21,7 +21,6 @@ export default function DisableElevation() {
 
       <HostelCard name={hostel.name} price={hostel.price} desc={hostel.desc} img={hostel.img} id={index}/>
     </Grid>
-
 );
 
 
