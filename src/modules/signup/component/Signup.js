@@ -141,9 +141,12 @@ export default function SignIn() {
   const { register, handleSubmit, errors } = useForm({
     mode: 'onSubmit',
     validationSchema: yup.object().shape({
-      email: yup.string().email().required()
-        ,
+      name: yup.string().required(),
+      lastname: yup.string().required(),
+      birthday: yup.string().required(),
+      email:yup.string().email().required(),
       password: yup.string().required(),
+      comfirmpassword: yup.string().required(),
     }),
    
   })
@@ -171,8 +174,8 @@ export default function SignIn() {
               className={classes.textfield}
        
               fullWidth
-              helperText={errors.email ? errors.email.message : ''}
-              error={!!errors.email}
+              helperText={errors.name ? errors.name.message : ''}
+              error={!!errors.name}
             />
                 <TextField
               label="lastname"
@@ -182,19 +185,19 @@ export default function SignIn() {
               className={classes.textfield}
         
               fullWidth
-              helperText={errors.email ? errors.email.message : ''}
-              error={!!errors.email}
+              helperText={errors.lastname ? errors.lastname.message : ''}
+              error={!!errors.lastname}
             />
                   <TextField
               label="birthday"
               name="birthday"
               inputRef={register}
-              variant="standard"
+              variant="outlined"
               className={classes.textfield}
-          type="date"
+
               fullWidth
-              helperText={errors.email ? errors.email.message : ''}
-              error={!!errors.email}
+              helperText={errors.birthday ? errors.birthday.message : ''}
+              error={!!errors.birthday}
             />
              <TextField
               label="email"
@@ -237,13 +240,13 @@ export default function SignIn() {
               <TextField
               className={classes.textfield}
               label="comfirm-password"
-              type="password"
               name="comfirmpassword"
+              type="password"
               inputRef={register}
               fullWidth
               variant="outlined"
-              helperText={errors.password ? errors.password.message: ''}
-              error={!!errors.password}
+              helperText={errors.comfirmpassword ? errors.comfirmpassword.message: ''}
+              error={!!errors.comfirmpassword}
               InputProps={{
                 className: classes.input,
                 startAdornment: (
