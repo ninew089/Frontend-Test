@@ -2,18 +2,25 @@ import React from 'react';
 import BookDetail from './BookDetail'
 import { Container, Box } from '@material-ui/core'
 import {  useSelector } from 'react-redux'
+import { makeStyles } from '@material-ui/core/styles'
 
+const useStyles = makeStyles(() => ({
+  box: {
+    marginTop: 20
+  },
+}))
 export default function BookList() {
   const productIds = useSelector((state) => state.hostel.productIds)
 
 
+  const classes = useStyles()
   
 
  
   return (
     <Container fixed> 
-      {console.log(productIds)}
-      <div style={{ marginTop: 20 }}> 
+
+      <div className={classes.box}> 
         <Box fontSize={24} fontWeight={700}>
           Booking List
         </Box>

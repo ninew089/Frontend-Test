@@ -81,7 +81,12 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginLeft: 0,
   }, name: {
-    flexGrow:1
+    flexGrow: 1,
+    color: 'inherit', textDecoration: 'inherit'
+  }, nav: {
+    color: 'inherit', textDecoration: 'inherit'
+  },title:{
+    marginLeft: 14 ,overflow:'hidden'
   }
 }));
 
@@ -127,7 +132,7 @@ export default function PersistentDrawerLeft() {
             <Menu />
           </IconButton>  <NavLink
             to={`/`}
-            style={{ color: 'inherit', textDecoration: 'inherit' }}
+      
             className={classes.name}
           >
           <Box fontSize={24} fontWeight={ 700} > 
@@ -136,7 +141,7 @@ export default function PersistentDrawerLeft() {
             </NavLink>
           <NavLink
             to={`/book`}
-            style={{ color: 'inherit', textDecoration: 'inherit' }}
+            className={classes.nav}
           >
           <IconButton color="inherit" >
           <Badge badgeContent={productIds.length} color="secondary">
@@ -173,7 +178,7 @@ export default function PersistentDrawerLeft() {
           :
                <NavLink
                to={`/login`}
-              style={{ color: 'inherit', textDecoration: 'inherit' }}
+               className={classes.nav}
     
              >
                <ListItem button  >
@@ -202,7 +207,7 @@ export default function PersistentDrawerLeft() {
  
               <div className="bg" />
         <div class="content">
-        <div style={{ marginLeft: 14 ,overflow:'hidden'}} >
+        <div className={classes.title} >
           <Box fontSize={24} fontWeight={700} paddingTop={ 16}> 
             Wellcome Hostel
           </Box>

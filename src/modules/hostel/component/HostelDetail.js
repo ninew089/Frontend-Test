@@ -8,9 +8,18 @@ import * as actions from '../action'
 import { useHistory } from 'react-router-dom'
 
 import Map from './Mapping'
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles(() => ({
+  box: {
+    height: '100vh', width: '100%'
+  }, img: {
+    borderRadius:10
+  }
+}))
 export default function Card() {
   const  {search}  = useLocation()
-  
+  const classes =useStyles()
  
   const [data, setData] = React.useState([]);
  
@@ -56,7 +65,7 @@ export default function Card() {
           </Box>
               <Grid container justify='flex-start' alignItems='center' >
                   <Grid items xs={12} sm={ 4}>
-                  <img src={data.img} alt="hostel" width='100%'  style={{borderRadius:10}}/> 
+            <img src={data.img} alt="hostel" width='100%' className={ classes.img}/> 
                   </Grid> 
                   <Grid items xs={12} sm={8} >
                   <Box marginLeft={ 8}>
@@ -78,7 +87,7 @@ export default function Card() {
           </Grid>
       
         </Grid>
-        <div style={{ height: '100vh', width: '100%' }}>
+        <div className={classes.box}>
         <Box fontSize={24} fontWeight={700} marginTop={ 8}>
       <Map/>
           </Box>
